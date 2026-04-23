@@ -4,17 +4,23 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController; 
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect()->route('login');
-});
+    return view('welcome');
+})->name('welcome');
 
 Route::middleware(['auth'])->group(function () {
+    // Profile Routes 
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
-    // Menu Management (Full CRUD)
+    // Menu Management
     Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
     Route::get('/menu/create', [MenuController::class, 'create'])->name('menu.create');
     Route::post('/menu/store', [MenuController::class, 'store'])->name('menu.store');

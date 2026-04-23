@@ -15,6 +15,26 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.*')">
+                        {{ __('Menu Management') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('orders.create')" :active="request()->routeIs('orders.create')">
+                        {{ __('POS Order') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.index')">
+                        {{ __('Order Summary') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('payments.index')" :active="request()->routeIs('payments.index')">
+                        {{ __('Payments') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('payments.history')" :active="request()->routeIs('payments.history')">
+                        {{ __('Transaction History') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -69,6 +89,26 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.*')">
+                {{ __('Menu Management') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('orders.create')" :active="request()->routeIs('orders.create')">
+                {{ __('POS Order') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.index')">
+                {{ __('Order Summary') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('payments.index')" :active="request()->routeIs('payments.index')">
+                {{ __('Payments') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('payments.history')" :active="request()->routeIs('payments.history')">
+                {{ __('Transaction History') }}
             </x-responsive-nav-link>
         </div>
 
